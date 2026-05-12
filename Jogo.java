@@ -223,6 +223,13 @@ menuAltura = validarAltura;
 
 System.out.println("Olá " + nomeJogador);
 System.out.println("Você tem um belo cabelo " + corCabeloEscolhido + " e é " + alturaEscolhida);
+System.out.println("Vamos começar nossa aventura!");
+System.out.println("===============================================================");
+System.out.println("                                              CAPÍTULO 01                                                           ");
+System.out.println(nomeJogador + " está sentado no terreiro da casa. A mãe e o pai saíram para comprar coisas na vendinha do povoado, mas até agora não voltaram.");
+System.out.println("Sentado numa pedra grande, " + nomeJogador + " está tentando acertar pedrinhas nos calanguinhos que estão distraídos, descansando na terra que ainda esfria depois de um longo dia de sol quente.");
+System.out.println(nomeJogador + " tem quantas pedrinhas?");
+int quantPedrinhas = entrada.nextInt();
 
 
 
