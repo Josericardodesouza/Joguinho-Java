@@ -1,43 +1,9 @@
-// JOGO RPG JOSE RICARDO Versão 0.2
+// JOGO RPG JOSE RICARDO Versão 0.2.2
 
 
 import java.util.Scanner;
 
-
-class Personagem {
-
-
-
-
-
-}
-
-
-/* class CriarPersonagem() {
-
-
-
-void exibirMenu() {
-
-
-
-
-
-
-
-
-} 
-
-
-
-
-} */
-
-
-public class Jogo {
-
- public static void main (String[] args) {
-
+class Menu  {
 
 Scanner entrada = new Scanner(System.in);
 
@@ -52,6 +18,8 @@ String nomeJogador = "";
 String alturaJogador = "";
 
 
+
+void perguntarNome() {
 
 while (nomeNConfirm) {
 
@@ -68,12 +36,15 @@ if (!nomeJogador.trim().isEmpty()) {
  System.out.println("Por favor digite um nome ;)");
 nomeNConfirm = true;
  
-
-
-
 }
 
 }
+
+}
+
+
+void perguntarCorCabelo() {
+
 
 
 while (menuCabelo) {
@@ -85,9 +56,7 @@ System.out.println("[ 3 ] Loiro.");
 System.out.println("[ 4 ] Ruivo.");
 
 if (entrada.hasNextInt()) {
-
 int opcaoCabelo = entrada.nextInt();
-
 
  switch (opcaoCabelo) {
 
@@ -96,7 +65,6 @@ int opcaoCabelo = entrada.nextInt();
 corCabeloEscolhido = "preto";
  validarCabelo = false;
 break;
-
 
  case 2:
  
@@ -110,13 +78,11 @@ case 3:
  validarCabelo = false;
 break;
 
-
 case 4:
 
  corCabeloEscolhido = "ruivo";
  validarCabelo = false;
  break;
-
 
 default:
 
@@ -147,8 +113,14 @@ menuCabelo = validarCabelo;
 } //fechamento while;
 
 
-while (menuAltura) {
+}
 
+
+
+void perguntarAltura() {
+
+
+while (menuAltura) {
 System.out.println("Qual a altura do seu personagem?");
 System.out.println("[ 1 ] Muito alto.");
 System.out.println("[ 2 ] Alto.");
@@ -158,7 +130,6 @@ System.out.println("[ 4 ] Muito baixo.");
 if (entrada.hasNextInt()) {
 
 int opcaoAltura = entrada.nextInt();
-
 
  switch (opcaoAltura) {
 
@@ -170,7 +141,7 @@ break;
 
 
  case 2:
- 
+
  alturaEscolhida = "alto(a)";
  validarAltura = false;
 break;
@@ -190,7 +161,6 @@ case 4:
 
 
 default:
-
  System.out.println("Opção inválida!");
   validarAltura = true;
 break;
@@ -217,19 +187,45 @@ menuAltura = validarAltura;
 
 } //fechamento while;
 
+}
 
 
+void exibirMenu() {
 
+perguntarNome();
+perguntarCorCabelo();
+perguntarAltura();
 
 System.out.println("Olá " + nomeJogador);
 System.out.println("Você tem um belo cabelo " + corCabeloEscolhido + " e é " + alturaEscolhida);
 System.out.println("Vamos começar nossa aventura!");
-System.out.println("===============================================================");
+
+
+} //fechamento exibirMenu
+
+} //fechamento classe
+
+
+
+public class Jogo {
+
+ public static void main (String[] args) {
+
+Menu menu = new Menu();
+menu.exibirMenu();
+
+
+
+
+
+
+
+/*System.out.println("===============================================================");
 System.out.println("                                              CAPÍTULO 01                                                           ");
 System.out.println(nomeJogador + " está sentado no terreiro da casa. A mãe e o pai saíram para comprar coisas na vendinha do povoado, mas até agora não voltaram.");
 System.out.println("Sentado numa pedra grande, " + nomeJogador + " está tentando acertar pedrinhas nos calanguinhos que estão distraídos, descansando na terra que ainda esfria depois de um longo dia de sol quente.");
 System.out.println(nomeJogador + " tem quantas pedrinhas?");
-int quantPedrinhas = entrada.nextInt();
+int quantPedrinhas = entrada.nextInt(); */
 
 
 
